@@ -5,17 +5,42 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Beast of Bermuda Talent Tree Tool</title>
         <link rel="stylesheet" href="main.css">
+        <script src="index.js"></script>
         <script defer src="src/index.js" charset="utf-8"></script>
         <script type="text/javascript" src="index.js"></script>
     </head>
-<h1>Placeholder!</h1>
-<div class="buttonContainer">
-    <button type="button" id="Herbivores" onclick="SHfunction('Herbivores')">Display Herbivores</button>
-    <button type="button" id="Carnivores" onclick="SHfunction('Carnivores')">Display Carnivores</button>
-    <button type="button" id="Flyers" onclick="SHfunction('Flyers')">Display Flyers</button>
-    <button type="button" id="Aquatics" onclick="SHfunction('Aquatics')">Display Aquatics</button>
-</div>
-<div class="dropdown">
-    <button onclick=""
-</div>
+
+<h1>Beasts of Bermuda Talent Tree Creator!</h1>
+    <!--Dropdown box-->
+    <select id = "selectDino" onchange = "selectOption()">
+        <option>Choose a Creature</option>
+    </select>
+
+<div id="dino"></div>
+<script>
+    //Dropdown box code selection for dinosaur
+    var select = document.getElementById("selectDino");
+    var DinoOptions = ['Acrocanthosaurus','Apatosaurus','Arganodus','Auroraceratops','Beelzebufo (Frog)','Coahuilaceratops','Elasmosaurus','Horseshoe Crab','Kronosaurus','Ichthyovenator','Lurdusaurus','Malawania','Megaraptor','Mosasaurus','Oryctodromeus','Pachycephalosaurus','Parasaurolophus','Pteranodon','Saichania','Tropeognathus','Tyrannosaurus','Velociraptor','Wiehenvenator'];
+    for(var i = 0; i < DinoOptions.length; i++) {
+    var opt = DinoOptions[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.appendChild(el);
+    }
+    
+    var output = document.getElementById('output');
+    function selectOption(){
+        var DinoOptions = document.getElementById('dinoOptions');
+        //get the index of the selected dino
+        var selectedIndex = DinoOptions.selectedIndex;
+        //get a selected option and text value
+        var selectedDino = DinoOptions.options[selectedIndex].text;
+        output.innerHTML = "You've selected" + selectedDino;
+    }
+    
+</script>
+
+
+
 </html>
