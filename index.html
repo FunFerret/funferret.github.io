@@ -9,16 +9,105 @@
         <script defer src="src/index.js" charset="utf-8"></script>
         <script type="text/javascript" src="index.js"></script>
     </head>
-
+<body>
 <h1>Beasts of Bermuda Talent Tree Creator!</h1>
     <!--Dropdown box-->
-    <select id = "selectDino" onchange = "selectOption()">
-        <option>Choose a Creature</option>
+    <select id = "dinos" onchange="displayTree()" id="selectOption">
+        <option value="">Choose a Creature</option>
+        <option value="1">Acrocanthosaurus</option>
+        <option value="2">Apatosaurus</option>
+        <option value="3">Arganodus</option>
+        <option value="4">Auroraceratops</option>
+        <option value="5">Beelzebufo (Frog)</option>
+        <option value="6">Coahuilaceratops</option>
+        <option value="7">Elasmosaurus</option>
+        <option value="8">Horseshoe Crab</option>
+        <option value="9">Kronosaurus</option>
+        <option value="10">Ichthyovenator</option>
+        <option value="11">Lurdusaurus</option>
+        <option value="12">Malawania</option>
+        <option value="13">Megaraptor</option>
+        <option value="14">Mosasaurus</option>
+        <option value="15">Oryctodromeus</option>
+        <option value="16">Pachycephalosaurus</option>
+        <option value="17">Parasaurolophus</option>
+        <option value="18">Pteranodon</option>
+        <option value="19">Saichania</option>
+        <option value="20">Tropeognathus</option>
+        <option value="21">Tyrannosaurus</option>
+        <option value="22">Velociraptor</option>
+        <option value="23">Wiehenvenator</option>
     </select>
 
-<div id="dino"></div>
+    <div id ="output"></div>
+    <img id="dinoTree" src="dinoTree"></img>
 <script>
-    //Dropdown box code selection for dinosaur
+
+    //Determine what tree and dino to display
+    function displayTree(){
+        var dinos = document.getElementById('dinos');
+        //get the index of the selected dino
+        var selectedIndex = dinos.selectedIndex;
+        //get a selected option and text value
+        var selectedDino = dinos.options[selectedIndex].text;
+        output.innerHTML = "You've selected " + selectedDino; //output selected dino
+
+        var selected = document.getElementById('selectOption');
+        var treeImg ="";
+        if(selected.value==1){//acro
+        treeImg = 'AcroTree.png';
+        }else if(selected.value==2){//apa
+            treeImg='apaTree.png';
+        }else if(selected.value==3){//argan
+            treeImg='ArganTree.png';
+        }else if(selected.value==4){//aurora
+            treeImg='AuroraTree.png';
+        }else if(selected.value==5){//beelze
+            treeImg='BeelzeTree.png';
+        }else if(selected.value==6){//coah
+            treeImg='CoahTree.png';
+        }else if(selected.value==7){//elas
+            treeImg='ElasTree.png';
+        }else if(selected.value==8){//crab
+            treeImg='HorseshoeTree.png';
+        }else if(selected.value==9){//krono
+            treeImg='KronoTree.png';
+        }else if(selected.value==10){//ichthy
+            treeImg='IchthyTree.png';
+        }else if(selected.value==11){//lurd
+            treeImg='LurdTree.png';
+        }else if(selected.value==12){//mala
+            treeImg='MalaTree.png';
+        }else if(selected.value==13){//megar
+            treeImg='MegarTree.png';
+        }else if(selected.value==14){//mosa
+            treeImg='MosaTree.png';
+        }else if(selected.value==15){//ory
+            treeImg='OryTree.png';
+        }else if(selected.value==16){//pachy
+            treeImg='PachyTree.png';
+        }else if(selected.value==17){//para
+            treeImg='ParaTree.png';
+        }else if(selected.value==18){//ptera
+            treeImg='PteraTree.png';
+        }else if(selected.value==19){//sai
+            treeImg='SaiTree.png';
+        }else if(selected.value==20){//trope
+            treeImg='TropeTree.png';
+        }else if(selected.value==21){//rex
+            treeImg='TrexTree.png';
+        }else if(selected.value==22){//velo
+            treeImg='VeloTree.png';
+        }else if(selected.value==23){//wieh
+            treeImg='Wie.png';
+        }else{
+            treeImg=''
+        }
+        document.getElementById("dinoTree").src=treeImg;
+    }
+
+    //Don't use this
+    /** Dropdown box code selection for dinosaur
     var select = document.getElementById("selectDino");
     var DinoOptions = ['Acrocanthosaurus','Apatosaurus','Arganodus','Auroraceratops','Beelzebufo (Frog)','Coahuilaceratops','Elasmosaurus','Horseshoe Crab','Kronosaurus','Ichthyovenator','Lurdusaurus','Malawania','Megaraptor','Mosasaurus','Oryctodromeus','Pachycephalosaurus','Parasaurolophus','Pteranodon','Saichania','Tropeognathus','Tyrannosaurus','Velociraptor','Wiehenvenator'];
     for(var i = 0; i < DinoOptions.length; i++) {
@@ -27,20 +116,9 @@
     el.textContent = opt;
     el.value = opt;
     select.appendChild(el);
-    }
-    
-    var output = document.getElementById('output');
-    function selectOption(){
-        var DinoOptions = document.getElementById('dinoOptions');
-        //get the index of the selected dino
-        var selectedIndex = DinoOptions.selectedIndex;
-        //get a selected option and text value
-        var selectedDino = DinoOptions.options[selectedIndex].text;
-        output.innerHTML = "You've selected" + selectedDino;
-    }
-    
+    } **/
 </script>
 
 
-
+</body>
 </html>
