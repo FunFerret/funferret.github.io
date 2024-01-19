@@ -12,7 +12,7 @@
 <body>
 <h1>Beasts of Bermuda Talent Tree Creator!</h1>
     <!--Dropdown box-->
-    <select id = "dinos" onchange="displayTree()" id="selectOption">
+    <select name= "dinos" onchange="displayTree(this.value)" id="selectOption">
         <option value="">Choose a Creature</option>
         <option value="1">Acrocanthosaurus</option>
         <option value="2">Apatosaurus</option>
@@ -40,66 +40,67 @@
     </select>
 
     <div id ="output"></div>
-    <img id="dinoTree" src="dinoTree"></img>
+    <br>
+    <img id="dinoTree" src="boblogo.jpg"></img>
 <script>
-
     //Determine what tree and dino to display
     function displayTree(){
+        /**
         var dinos = document.getElementById('dinos');
         //get the index of the selected dino
         var selectedIndex = dinos.selectedIndex;
         //get a selected option and text value
         var selectedDino = dinos.options[selectedIndex].text;
         output.innerHTML = "You've selected " + selectedDino; //output selected dino
-
+        **/
         var selected = document.getElementById('selectOption');
         var treeImg ="";
         if(selected.value==1){//acro
-        treeImg = 'AcroTree.png';
+        treeImg = 'trees/AcroTree.png';
         }else if(selected.value==2){//apa
-            treeImg='apaTree.png';
+            treeImg='trees/apaTree.png';
         }else if(selected.value==3){//argan
-            treeImg='ArganTree.png';
+            treeImg='trees/ArganTree.png';
         }else if(selected.value==4){//aurora
-            treeImg='AuroraTree.png';
+            treeImg='trees/AuroraTree.png';
         }else if(selected.value==5){//beelze
-            treeImg='BeelzeTree.png';
+            treeImg='trees/BeelzeTree.png';
         }else if(selected.value==6){//coah
-            treeImg='CoahTree.png';
+            treeImg='trees/CoahTree.png';
         }else if(selected.value==7){//elas
-            treeImg='ElasTree.png';
+            treeImg='trees/ElasTree.png';
         }else if(selected.value==8){//crab
-            treeImg='HorseshoeTree.png';
+            treeImg='trees/HorseshoeTree.png';
         }else if(selected.value==9){//krono
-            treeImg='KronoTree.png';
+            treeImg='trees/KronoTree.png';
         }else if(selected.value==10){//ichthy
-            treeImg='IchthyTree.png';
+            treeImg='trees/IchthyTree.png';
         }else if(selected.value==11){//lurd
-            treeImg='LurdTree.png';
+            treeImg='trees/LurdTree.png';
         }else if(selected.value==12){//mala
-            treeImg='MalaTree.png';
+            treeImg='trees/MalaTree.png';
         }else if(selected.value==13){//megar
-            treeImg='MegarTree.png';
+            treeImg='trees/MegarTree.png';
         }else if(selected.value==14){//mosa
-            treeImg='MosaTree.png';
+            treeImg='trees/MosaTree.png';
         }else if(selected.value==15){//ory
-            treeImg='OryTree.png';
+            treeImg='trees/OryTree.png';
         }else if(selected.value==16){//pachy
-            treeImg='PachyTree.png';
+            treeImg='trees/PachyTree.png';
         }else if(selected.value==17){//para
-            treeImg='ParaTree.png';
+            treeImg='trees/ParaTree.png';
         }else if(selected.value==18){//ptera
-            treeImg='PteraTree.png';
+            treeImg='trees/PteraTree.png';
         }else if(selected.value==19){//sai
-            treeImg='SaiTree.png';
+            treeImg='trees/SaiTree.png';
         }else if(selected.value==20){//trope
-            treeImg='TropeTree.png';
+            treeImg='trees/TropeTree.png';
         }else if(selected.value==21){//rex
-            treeImg='TrexTree.png';
+            treeImg='trees/TrexTree.png';
         }else if(selected.value==22){//velo
-            treeImg='VeloTree.png';
+            treeImg='trees/VeloTree.png';
         }else if(selected.value==23){//wieh
-            treeImg='Wie.png';
+            treeImg='trees/Wieh.png';
         }else{
             treeImg=''
         }
